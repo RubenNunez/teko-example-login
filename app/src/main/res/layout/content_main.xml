@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/activity_main"
+        tools:context=".MainActivity" android:background="@color/colorPrimary">
+
+    <ImageView
+            android:layout_width="408dp"
+            android:layout_height="850dp" app:srcCompat="@drawable/bg" android:id="@+id/bg"
+            android:scaleType="centerCrop"
+            android:background="#00FFFFFF"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toStartOf="@+id/Blur"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="1.0"/>
+
+    <com.github.mmin18.widget.RealtimeBlurView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:realtimeBlurRadius="50dp"
+            android:id="@+id/Blur" app:realtimeOverlayColor="#88B9B9B9"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent" android:id="@+id/linearLayout">
+
+        <ImageView
+                android:layout_width="849dp"
+                android:layout_height="688dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/shape_01" android:background="#00FFFFFF" android:id="@+id/top_vector"/>
+
+    </LinearLayout>
+
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/tableLayout">
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center"
+                  android:layout_weight="0" android:weightSum="1">
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" app:srcCompat="@drawable/ic_person_black_24dp"
+                    android:id="@+id/person_img" android:scaleType="center" android:layout_weight=".3"/>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#ffff"
+                    android:textColor="#ffff"
+                    android:inputType="text"
+                    android:hint="user"
+                    android:ems="10"
+                    android:id="@+id/loginEditText"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center"
+                  android:layout_weight="0" android:weightSum="1">
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" app:srcCompat="@drawable/ic_lock_black_24dp"
+                    android:id="@+id/lock_img" android:scaleType="center" android:layout_weight=".3"/>
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#ffff"
+                    android:textColor="#ffff"
+                    android:inputType="numberPassword"
+                    android:hint="password"
+                    android:ems="10"
+                    android:id="@+id/passwordEditText"
+            />
+        </TableRow>
+    </TableLayout>
+    <android.support.design.widget.FloatingActionButton
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:clickable="true" app:srcCompat="@drawable/ic_arrow_forward_black_24dp"
+            android:id="@+id/login_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tableLayout" app:backgroundTint="@color/colorAccent"/>
+
+</android.support.constraint.ConstraintLayout>
