@@ -12,8 +12,8 @@
         tools:context=".MainActivity" android:background="@color/colorPrimary">
 
     <ImageView
-            android:layout_width="408dp"
-            android:layout_height="850dp" app:srcCompat="@drawable/bg" android:id="@+id/bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:srcCompat="@drawable/bg" android:id="@+id/bg"
             android:scaleType="centerCrop"
             android:background="#00FFFFFF"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toStartOf="@+id/Blur"
@@ -23,7 +23,7 @@
     <com.github.mmin18.widget.RealtimeBlurView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:realtimeBlurRadius="50dp"
+            app:realtimeBlurRadius="15dp"
             android:id="@+id/Blur" app:realtimeOverlayColor="#88B9B9B9"/>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -43,9 +43,18 @@
     <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:id="@+id/tableLayout">
+            android:gravity="center|top"
+            android:id="@+id/tableLayout" android:weightSum="5">
 
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="1">
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" app:srcCompat="@drawable/teko" android:id="@+id/imageView"
+                    android:layout_gravity="center" android:scaleType="center" android:adjustViewBounds="false"
+                    android:cropToPadding="true" android:layout_weight="1"/>
+        </TableRow>
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center"
                   android:layout_weight="0" android:weightSum="1">
             <ImageView
@@ -78,6 +87,15 @@
                     android:ems="10"
                     android:id="@+id/passwordEditText"
             />
+        </TableRow>
+        <TableRow android:layout_height="wrap_content" android:gravity="bottom|center"
+                  android:layout_width="wrap_content" android:layout_weight="1">
+
+            <TextView
+                    android:text="copyright @ ruben"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" android:id="@+id/textView" android:textColor="#FFFFFF"
+                    android:layout_weight="1" android:gravity="bottom|center"/>
         </TableRow>
     </TableLayout>
     <android.support.design.widget.FloatingActionButton
