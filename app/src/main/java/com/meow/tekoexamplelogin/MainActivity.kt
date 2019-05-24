@@ -9,9 +9,6 @@ import android.view.inputmethod.InputMethodManager
 import kotlinx.android.synthetic.main.content_main.*
 import android.content.Intent
 
-
-
-
 class MainActivity : AppCompatActivity() {
 
     private var username: String = ""
@@ -41,7 +38,6 @@ class MainActivity : AppCompatActivity() {
                 this.passwordEditText?.error = null
             }
         }
-
 
 
         this.login_btn.setOnClickListener{

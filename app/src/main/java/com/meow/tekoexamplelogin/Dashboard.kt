@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import kotlinx.android.synthetic.main.content_dashboard.*
-import android.util.Patterns
-import android.widget.Toast
 import android.content.Intent
-import android.content.ComponentName
 import android.net.Uri
 
 
@@ -47,7 +44,6 @@ class Dashboard : AppCompatActivity() {
                     this.url = "https://" + this.url
                 }
 
-
                 if (helper.isValidUrl(url)) {
 
                     // nach der Eingabe Fehler wieder auflösen
@@ -68,12 +64,7 @@ class Dashboard : AppCompatActivity() {
                     this.urlEditText?.error = "Falsche URL"
                     this.url_btn.hide()
                 }
-
-
             }
         }
-
-        //this.urlEditText.on
     }
-
 }
